@@ -1,4 +1,5 @@
 package pekan1_2511532007;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,6 +19,8 @@ public class Main {
 			System.out.println("3. Tarik Tunai");
 			System.out.println("4. Cek Informasi Rekening");
 			System.out.println("5. Ganti Akun");
+			System.out.println("6. Cetak Mutasi(Riwayat)");
+			System.out.println("7. Transaksi Terbaru)");
 			System.out.println("0. Keluar");
 
 			int pilihan = input.nextInt();
@@ -88,6 +91,22 @@ public class Main {
 					}
 				}
 				break;
+				
+			case 6:
+				if(akunAktif == null) {
+					System.out.println("Belum ada transaksi pada rekening ini");
+				} else {
+					akunAktif.cetakMutasi();
+				}
+				break;
+			
+			case 7:
+			    if (akunAktif == null) {
+			        System.out.println("Error: Anda belum memiliki transaksi!");
+			    } else {
+			        akunAktif.transaksiTerbaru();
+			    }
+			    break;
 
 			case 0:
 				isRunning = false;
